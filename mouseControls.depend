@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1432912885 source:c:\users\sanjay maharjan\documents\mousecontrols\main.cpp
+	"main.h"
+	<windows.h>
+	"iostream"
+
+1432910033 c:\users\sanjay maharjan\documents\mousecontrols\main.h
+	<windows.h>
+
