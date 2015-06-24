@@ -1,0 +1,11 @@
+void move_cursorTo(int x,int y)
+void click_Left_down(int x, int y)
+void click_Left_up(int x, int y)
+void click_Right_down(int x, int y)
+void click_Right_up(int x, int y)
+
+In c#
+	 [DllImport("mouseControls.dll", CallingConvention = CallingConvention.Cdecl)]
+        public extern static bool move_cursorTo(int x, int y);
+
+Note: Use the functions like the events like in physical mouse...not like in touch pad
