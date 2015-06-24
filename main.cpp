@@ -4,7 +4,7 @@
 
 #include <windows.h>
 #include "iostream"
-void move_cursorTo(int x, int y)
+__declspec(dllexport) void move_cursorTo(int x, int y)
 {
     try{
         INPUT input={};
@@ -18,23 +18,23 @@ void move_cursorTo(int x, int y)
     }
     catch(bool res)
     {
-    return !res;
+    //return !res;
     }
 }
 
 
-void click_Left_up(int x,int y)
+__declspec(dllexport) void click_Left_up(int x,int y)
 {
     INPUT input={};
     input.type = INPUT_MOUSE;
     input.mi.mouseData=0;
     input.mi.dx =  x*(65536/GetSystemMetrics(SM_CXSCREEN));//x being coord in pixels
     input.mi.dy =  y*(65536/GetSystemMetrics(SM_CYSCREEN));//y being coord in pixels
-    input.mi.dwFlags = MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_LEFTUP;
+    input.mi.dwFlags =  MOUSEEVENTF_LEFTUP;
     SendInput(1,&input,sizeof(input));
 
 }
-void click_Left_down(int x, int y)
+__declspec(dllexport) void click_Left_down(int x, int y)
 {
     INPUT input={};
     input.type = INPUT_MOUSE;
@@ -46,7 +46,7 @@ void click_Left_down(int x, int y)
     //click_Left_up(x,y);
 }
 
-void click_Right_up(int x, int y)
+__declspec(dllexport) void click_Right_up(int x, int y)
 {
     INPUT input={};
     input.type = INPUT_MOUSE;
@@ -58,14 +58,14 @@ void click_Right_up(int x, int y)
     //click_Left_up(x,y);
 }
 
-void click_Right_down(int x, int y)
+__declspec(dllexport) void click_Right_down(int x, int y)
 {
     INPUT input={};
     input.type = INPUT_MOUSE;
     input.mi.mouseData=0;
     input.mi.dx =  x*(65536/GetSystemMetrics(SM_CXSCREEN));//x being coord in pixels
     input.mi.dy =  y*(65536/GetSystemMetrics(SM_CYSCREEN));//y being coord in pixels
-    input.mi.dwFlags = MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_RIGHTDOWNDOWN;
+    input.mi.dwFlags = MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_RIGHTDOWN;
     SendInput(1,&input,sizeof(input));
 }
 

@@ -20,10 +20,10 @@ extern "C"
 #endif
 
 void DLL_EXPORT move_cursorTo(int x,int y);
-void DLL_EXPORT click_Left_down(int x int y);
-void DLL_EXPORT click_Left_up(int x int y);
-void DLL_EXPORT click_Right_down(int x int y);
-void DLL_EXPORT click_Right_up(int x int y);
+void DLL_EXPORT click_Left_down(int x, int y);
+void DLL_EXPORT click_Left_up(int x, int y);
+void DLL_EXPORT click_Right_down(int x, int y);
+void DLL_EXPORT click_Right_up(int x, int y);
 
 
 #ifdef __cplusplus

@@ -1,0 +1,6 @@
+EXPORTS
+    click_Left_down @1
+    click_Left_up @2
+    click_Right_down @3
+    click_Right_up @4
+    move_cursorTo @5
